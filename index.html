@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker Pro</title>
+  <meta name="description" content="Advanced color picker with RGB, HSL, HSV, LAB, LCh, OKLCh color spaces, color harmony, contrast checker, and color blindness simulation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div>
+    <h1 data-i18n="title">Color Picker Pro</h1>
+    <div class="subtitle" data-i18n="subtitle">Advanced color picker with multiple color spaces</div>
+  </div>
+  <div class="header-controls">
+    <button id="btn-eyedropper" class="btn btn-icon" title="Pick from screen">💉</button>
+    <button id="btn-theme" class="btn">Light</button>
+    <button id="btn-lang" class="btn">JA</button>
+  </div>
+</header>
+
+<main class="main-grid">
+
+  <!-- ── Left column: pickers ─────────────────────────────────────────────── -->
+  <div class="left-col">
+
+    <section class="card">
+      <div class="preview-block">
+        <div id="preview-swatch"></div>
+        <div class="preview-inputs">
+          <div id="preview-hex">#FF6432</div>
+          <div class="hex-row">
+            <input id="hex-input" type="text" maxlength="7" placeholder="#rrggbb" autocomplete="off" spellcheck="false">
+            <input id="native-picker" type="color" value="#ff6432" title="Color picker">
+          </div>
+          <div class="eyedropper-row">
+            <!-- eyedropper initialized in JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Space tabs -->
+      <div class="space-tabs">
+        <button class="btn active" data-space="hsl">HSL</button>
+        <button class="btn" data-space="hsv">HSV</button>
+        <button class="btn" data-space="rgb">RGB</button>
+        <button class="btn" data-space="lab">LAB</button>
+        <button class="btn" data-space="lch">LCh</button>
+        <button class="btn" data-space="oklch">OKLCh</button>
+      </div>
+
+      <div id="slider-container"></div>
+    </section>
+
+    <!-- Recent colors -->
+    <section class="card">
+      <div class="recent-header">
+        <h2 data-i18n="recentColors">Recent Colors</h2>
+        <button id="btn-clear-recent" class="btn" data-i18n="clearRecent">Clear</button>
+      </div>
+      <div id="recent-colors"></div>
+    </section>
+
+  </div>
+
+  <!-- ── Right column ──────────────────────────────────────────────────────── -->
+  <div class="right-col">
+
+    <!-- Formats -->
+    <section class="card">
+      <h2 data-i18n="formats">Color Formats</h2>
+      <ul id="formats-list"></ul>
+    </section>
+
+    <!-- Harmony -->
+    <section class="card">
+      <h2 data-i18n="harmony">Color Harmony</h2>
+      <div class="harmony-controls">
+        <select id="harmony-select">
+          <option value="complementary">Complementary</option>
+          <option value="triadic">Triadic</option>
+          <option value="analogous">Analogous</option>
+          <option value="splitComplementary">Split-Complementary</option>
+          <option value="tetradic">Tetradic</option>
+          <option value="monochromatic">Monochromatic</option>
+        </select>
+      </div>
+      <div id="harmony-swatches"></div>
+    </section>
+
+    <!-- Contrast -->
+    <section class="card">
+      <h2 data-i18n="contrastChecker">Contrast</h2>
+      <div id="contrast-results"></div>
+    </section>
+
+    <!-- Color Blindness -->
+    <section class="card">
+      <h2 data-i18n="colorBlindness">Color Blindness</h2>
+      <div id="cb-swatches"></div>
+    </section>
+
+  </div>
+
+</main>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
