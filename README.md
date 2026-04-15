@@ -62,3 +62,10 @@ color-picker-pro/
 ## License
 
 MIT © 2026 SEN LLC (SEN 合同会社)
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/color-picker-pro/
+- 📝 dev.to: https://dev.to/sendotltd/an-advanced-color-picker-with-oklch-lch-lab-and-color-harmony-4h1j
+<!-- /sen-publish:links -->
